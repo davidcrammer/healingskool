@@ -1,0 +1,166 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: franklin-gothic-atf, sans-serif;
+    background-color: #efefef;
+}
+
+a {
+    text-decoration: none;
+    padding: 10px;
+    color: inherit;
+}
+
+h1 {
+    font-size: 40px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 20px;
+}
+p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+li {
+    list-style: none;
+}
+
+hr {
+    margin: 50px 0 0 0;
+}
+b {
+    font-weight: 600;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.nowrap {
+    flex-wrap: nowrap;
+}
+
+.flex-left {
+    justify-content: flex-start;
+}
+
+.flex-right {
+    justify-content: flex-end;
+}
+
+.flex-sb {
+    justify-content: space-between;
+}
+
+.flex-top {
+    align-items: flex-start;
+}
+
+.flex-bottom {
+    align-items: flex-end;
+}
+
+header, section, footer {
+    min-height: 100px;
+    width: 100vw;
+}
+
+.row {
+    width: 95vw;
+    padding: 20px;
+}
+
+.column-1 {
+    width: 1000px;
+}
+.column-2 {
+    width: 500px; 
+}
+.column-3 {
+    width: 333px;
+}
+
+.padding {
+    padding: 50px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.section-form {
+    background-color: white;
+}
+
+.notification, .comment {
+    width: 100%;
+    padding:10px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+.comment {
+    background-color: #efefef;
+    border: 1px solid #ddd;
+    margin: 10px 0 0 0;
+}
+.comment-meta {
+    font-size: 12px;
+}
+
+.error {
+    background-color: rgb(249, 195, 195);
+    border: 1px solid rgb(221, 136, 136);
+}
+.success {
+    background-color: rgb(173, 243, 164);
+    border: 1px solid rgb(169, 219, 163);
+}
+
+header {
+    background-color: #e79e59;
+    color: white;
+}
+
+input {
+    margin: 10px 0;
+}
+
+input[type=text] {
+    min-width: 250px;
+    padding:10px;
+    border: 1px solid;
+    border-radius: 100px;
+    background-color: #fff;
+}
+
+input[type=submit] {
+    padding: 10px;
+    min-width: 100px;
+    border:none;
+    background-color: black;
+    border-radius: 100px;
+    color: white;
+    box-shadow: none;
+}
+
+.comment-field {
+    width: 300px;
+    height: 100px;
+    padding: 10px;
+    border-radius: 10px;
+    resize:none;
+    font-size: 16px;
+}
