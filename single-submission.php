@@ -4,6 +4,7 @@ get_header();
 
 if(logged_in()){ 
     
+    ?> <p>Small Change. this is the new feature. </p> <?php
     
 
 while(have_posts()){
