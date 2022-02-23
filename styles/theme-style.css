@@ -131,19 +131,37 @@ header, section, footer {
 
 header {
     background-color: #e79e59;
+    background: linear-gradient(150deg, rgba(231,158,89,1) 0%, rgba(255,119,148,1) 100%);
     color: white;
+    z-index: 100;
+}
+.header-top-bar {
+    min-height:0;
+    height: 32px;
+    background-color: #222;
+    width: 100vw;
+    padding: 5px 20px;
+    color:white;
+    
+}
+.header-top-bar p {
+    font-size: 12px;
+}
+.header-top-bar p span {
+    text-transform: capitalize;
 }
 
 input {
     margin: 10px 0;
 }
 
-input[type=text] {
+input[type=text], input[type=password] {
     min-width: 250px;
     padding:10px;
     border: 1px solid;
     border-radius: 100px;
     background-color: #fff;
+
 }
 
 input[type=submit] {
@@ -156,6 +174,10 @@ input[type=submit] {
     box-shadow: none;
 }
 
+.login-username input[type=text], .login-password input[type=password] {
+    width: 100%;
+}
+
 .comment-field {
     width: 300px;
     height: 100px;
@@ -164,3 +186,4 @@ input[type=submit] {
     resize:none;
     font-size: 16px;
 }
+

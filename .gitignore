@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Build and Release Folders
 bin-debug/
 bin-release/
@@ -16,3 +17,28 @@ bin-release/
 # Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
 # should NOT be excluded as they contain compiler settings and other important
 # information for Eclipse / Flash Builder.
+=======
+# ignore everything in the root except the "wp-content" directory.
+!wp-content/
+
+# ignore everything in the "wp-content" directory, except:
+# "mu-plugins", "plugins", "themes" directory
+wp-content/*
+!wp-content/mu-plugins/
+!wp-content/plugins/
+!wp-content/themes/
+
+# ignore these plugins
+wp-content/plugins/hello.php
+
+# ignore specific themes
+wp-content/themes/twenty*/
+
+# ignore node dependency directories
+node_modules/
+
+# ignore log files and databases
+*.log
+*.sql
+*.sqlite
+>>>>>>> 730af8dd4b045ee3e20e5bb809ded2a509bc26f3

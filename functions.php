@@ -154,7 +154,7 @@ function logged_in() {
     global $post;
     
     if (!is_user_logged_in()) {
-        if(wp_redirect(wp_login_url(get_permalink()))) {
+        if(wp_redirect('/login')) {
             exit;
         }
     } else {
@@ -205,3 +205,55 @@ function process_comment_form() {
     wp_safe_redirect( $url );
 	exit();
 }
+
+
+
+
+/*//redirect default login form to our new one
+function goto_login_page() {
+    $page = basename($_SERVER["REQUEST_URI"]);
+    $pageNoArgs = explode( '?', $page);
+
+    if( $pageNoArgs[0] === "wp-login.php" && $_SERVER["REQUEST_METHOD"] == "GET") { 
+        echo "we should be going to new page";
+        wp_redirect('/login');
+    exit;
+    }
+}
+
+add_action("init","goto_login_page");*/
+
+add_action( 'wp_login_failed', 'my_front_end_login_fail' );  // hook failed login
+
+function my_front_end_login_fail( $username ) {
+   $referrer = $_SERVER['HTTP_REFERER'];  // where did the post submission come from?
+   // if there's a valid referrer, and it's not the default log-in screen
+   if ( !empty($referrer) && !strstr($referrer,'wp-login') && !strstr($referrer,'wp-admin') ) {
+      wp_redirect( $referrer . '?login=failed' );  // let's append some information (login=failed) to the URL for the theme to use
+      exit;
+   }
+}
+
+
+
+
+//restrict access to the dashboard for subsribers
+add_action( "init", "blockusers_init" );
+function blockusers_init() {
+    if ( is_admin() && ! current_user_can( "administrator" ) &&
+    ! ( defined( "DOING_AJAX" ) && DOING_AJAX ) ) {
+    wp_redirect( home_url() );
+    exit;
+    }
+}
+
+//remove admin bar for subscribers
+add_action('after_setup_theme', 'remove_admin_bar');
+
+function remove_admin_bar() {
+if (!current_user_can('administrator') && !is_admin()) {
+  show_admin_bar(false);
+}
+}
+
+
